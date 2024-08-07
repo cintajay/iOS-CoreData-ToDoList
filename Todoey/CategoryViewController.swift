@@ -10,7 +10,7 @@ import CoreData
 
 class CategoryViewController: UITableViewController {
     
-    var categories = [Category]()
+    var categories = [Category]() //entity
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -33,7 +33,7 @@ class CategoryViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
-        //cell.textLabel?.text = categories[indexPath.row].name
+        cell.textLabel?.text = categories[indexPath.row].name
         
         return cell
         
@@ -43,7 +43,7 @@ class CategoryViewController: UITableViewController {
     //MARK: - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToItems", sender: self)
+        performSegue(withIdentifier: "showItemsSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,10 +69,10 @@ class CategoryViewController: UITableViewController {
     
     func loadCategories() {
         
-        //let request : NSFetchRequest<Category> = Category.fetchRequest()
+        let request : NSFetchRequest<Category> = Category.fetchRequest()
         
         do{
-            //categories = try context.fetch(request)
+            categories = try context.fetch(request)
         } catch {
             print("Error loading categories \(error)")
         }
@@ -92,12 +92,12 @@ class CategoryViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
-//            let newCategory = Category(context: self.context)
-//            newCategory.name = textField.text!
-//            
-//            self.categories.append(newCategory)
-//            
-//            self.saveCategories()
+            let newCategory = Category(context: self.context) //note
+            newCategory.name = textField.text!
+            
+            self.categories.append(newCategory)
+            
+            self.saveCategories()
             
         }
         

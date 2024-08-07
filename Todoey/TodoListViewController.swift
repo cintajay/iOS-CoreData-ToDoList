@@ -10,7 +10,7 @@ import CoreData
 
 class TodoListViewController: UITableViewController {
     
-    var itemArray = [Item]()
+    var itemArray = [Item]() //entity
     
 //    var selectedCategory : Category? {
 //        didSet{

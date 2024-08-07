@@ -105,13 +105,13 @@
 			children = (
 				BB76C5E62BC7B1D600ADDAF3 /* AppDelegate.swift */,
 				BB76C5E82BC7B1D600ADDAF3 /* SceneDelegate.swift */,
+				BB76C61D2BC800E400ADDAF3 /* CategoryViewController.swift */,
 				BB76C5EA2BC7B1D600ADDAF3 /* TodoListViewController.swift */,
 				BB76C5EC2BC7B1D600ADDAF3 /* Main.storyboard */,
 				BB76C5F22BC7B1D800ADDAF3 /* Assets.xcassets */,
 				BB76C5F42BC7B1D800ADDAF3 /* LaunchScreen.storyboard */,
 				BB76C5F72BC7B1D800ADDAF3 /* Info.plist */,
 				BB76C5EF2BC7B1D600ADDAF3 /* Todoey.xcdatamodeld */,
-				BB76C61D2BC800E400ADDAF3 /* CategoryViewController.swift */,
 			);
 			path = Todoey;
 			sourceTree = "<group>";
